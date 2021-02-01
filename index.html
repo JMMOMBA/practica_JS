@@ -7,16 +7,16 @@
     <script src="js/datos.js"></script>
 </head>
 <body>
-    <header id="seleccion">
-        <input type="text" id="tarea">
+    <div id="seleccion">
+        <input type="text" id="tareaInput" placeholder="Introduce una tarea">
         <select id="prioridad">
             <option value="">Selecciona una prioridad</option>
             <option value="urgente">URGENTE</option>
             <option value="diaria">DIARIA</option>
             <option value="mensual">MENSUAL</option>
         </select>
-        <button id="btn">GUARDAR</button>
-    </header>
+        <button id="btn-guardar" value="guardar">GUARDAR</button>
+    </div>
     <hr>
     <main id="eleccion">
         <select id="prioridad">
@@ -25,14 +25,18 @@
             <option value="diaria">DIARIA</option>
             <option value="mensual">MENSUAL</option>
         </select>
-        <input type="text" id="busqueda">
-        <section id="tareas">
+        <input type="text" id="busquedaInput" placeholder="Tarea a buscar">
+        <section class="tareas">
             <!-- <article>
-                <h1>Nombre de tarea</h1><button id="eliminar">ELIMINAR</button>
+                <h2>Nombre de tarea</h2>
+                <div class="eliminar"> 
+                    <button id="btn-eliminar">ELIMINAR</button>
+                </div>
             </article> -->
         </section>
     </main>
 
-    <script src="js/tareas.js"></script>
+    <script src="js/funciones.js"></script>
+    <script src="js/tareas1.js"></script>
 </body>
 </html>

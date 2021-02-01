@@ -1,7 +1,18 @@
-var listaTareas = new Array();
+const listaTareas = new Array(
+    {
+        idTarea: 0,
+        titulo: 'Estudiar JS',
+        prioridad: 'urgente'
+    },
+    {
+        idTarea: 1,
+        titulo: 'Sacar al perro',
+        prioridad: 'diaria' 
+    },
+    {
+        idTarea: 2,
+        titulo: 'Cantar en el coro',
+        prioridad: 'mensual'
+    },
+);
 
-listaTareas = [
-    {'idTarea': 0, 'titulo': 'Estudiar Js', 'prioridad': 'urgente'},
-    {'idTarea': 2, 'titulo': 'Leer', 'prioridad': 'diaria'},
-    {'idTarea': 3, 'titulo': 'Correr', 'prioridad': 'mensual'},
-];
