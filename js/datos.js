@@ -1,4 +1,4 @@
-const listaTareas = new Array(
+let tareas = new Array(
     {
         idTarea: 0,
         titulo: 'Estudiar JS',

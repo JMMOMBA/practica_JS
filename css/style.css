@@ -1,0 +1,59 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+footer {
+    background-color: black;
+    color: white;
+    padding: 10px;
+}
+
+#seleccion {
+    background-color: violet;
+    padding: 20px 0;
+
+}
+
+input {
+    padding: 10px;
+    font-size: x-large;
+}
+
+select {
+    padding: 10px;
+    font-size: x-large;
+}
+
+#btn-guardar {
+    font-size: x-large;
+}
+
+.alerta {
+    text-align: center;
+    color: red;
+    font-size: x-large;
+}
+
+.eleccion {
+    background-color: rgb(75, 60, 141);
+    padding: 10px 0;
+}
+
+.urgente {
+    background-color: tomato;
+}
+
+.diaria {
+    background-color: lightgoldenrodyellow;
+}
+
+.mensual {
+    background-color: lightgreen;
+}
