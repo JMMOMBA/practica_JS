@@ -2,7 +2,8 @@
 const sectionTareas = document.querySelector('.tareas');
 const btnForm = document.querySelector('#btn-guardar');
 const tareaInput = document.querySelector('#tareaInput');
-const prioridad = document.querySelector('#prioridad');
+//const prioridad = document.querySelector('#prioridad');
+
 
 let idTarea = 2;
 
@@ -14,31 +15,10 @@ btnForm.addEventListener('click', (event) => {
         prioridad: prioridad.value,
         id: idTarea++,
     });
+
     sectionTareas.innerHTML = '';
     printTareas(tareas, sectionTareas);
 });
-
-// btnForm.addEventListener('click', getDataForm);
-
-// function getDataForm(event) {
-//     event.preventDefault();
-//     const tituloTarea = tareaInput.value;
-//     const prioridadTarea = prioridad.value;
-
-//     if (tituloTarea != "" && prioridadTarea != "") {
-//         const newTarea = {
-//             id: idTarea++,
-//             titulo: tituloTarea,
-//             prioridad: prioridadTarea
-//         };
-//         printTareas(tareas, newTarea);
-//     } else {
-//         alert("Debes rellenar todos los campos");
-            
-//     }
-// }
-
-
 
 //INTRODUCCIÓN DE TAREAS
 function printTareas(pTareas, pIntroduceTareas) {
@@ -65,7 +45,7 @@ function printUnaTarea(pTarea) {
             break;
     }
     
-
+    
     let p = document.createElement('p');
     p.innerText = pTarea.titulo;
 
@@ -79,23 +59,15 @@ function printUnaTarea(pTarea) {
         div.remove();
     })
     div.appendChild(p);
-    div.appendChild(button);
+    div.appendChild(button);    
     
     return div;    
 }
 
 //FILTRADO DE TAREAS
-
-// function filtrarTareas (pPrioridad, pTareas) {
-//     let listaFiltrada = pTareas.filter (tarea => tarea.prioridad == pPrioridad);
-
-//     return listaFiltrada;
-// }
-
-let seleccionaPrioridad = document.querySelector('#busquedaPrioridad');
+const seleccionaPrioridad = document.querySelector('#busquedadPrioridad')
 
 seleccionaPrioridad.addEventListener('change', getBusquedaPrioridad);
-
 
 function getBusquedaPrioridad(event) {
     let busquedaPrioridad = seleccionaPrioridad.value;
@@ -103,10 +75,10 @@ function getBusquedaPrioridad(event) {
     if (busquedaPrioridad == 'urgente') {
         let listaPrioridad = listaTareas.filter(tarea => tarea.prioridad == 'urgente');
         printTareas(listaPrioridad);
-    } else if (prioridad == 'diaria') {
+    } else if (busquedaPrioridad == 'diaria') {
         let listaPrioridad = listaTareas.filter(tarea => tarea.prioridad == 'diaria');
         printTareas(listaPrioridad);
-    } else if (prioridad == 'mensual') {
+    } else if (busquedaPrioridad == 'mensual') {
         let listaPrioridad = listaTareas.filter(tarea => tarea.prioridad == 'mensual');
         printTareas(listaPrioridad);
     } else {
@@ -114,11 +86,15 @@ function getBusquedaPrioridad(event) {
     }
 }
 
+
+
 //TAREA A BUSCAR
 
 const inputTarea = document.querySelector('#busquedaInput');
 
 inputTarea.addEventListener('keydown', getInputBusqueda)
+
+listaTareas = 0;
 
 function getInputBusqueda(event) {
     let inputBusqueda = inputTarea.value;
@@ -129,10 +105,3 @@ function getInputBusqueda(event) {
         printTareas(searchByWord);
     }   
 }
-
-// function searchByWord(pWord, pTareas) {
-//     const listaFiltrada = pTareas.filter( tarea => {
-//         return tarea.titulo.toLowerCase().includes(pWord);
-//     })
-//     return listaFiltrada;
-// }
